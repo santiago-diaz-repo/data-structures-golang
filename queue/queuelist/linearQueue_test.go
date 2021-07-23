@@ -103,6 +103,26 @@ func TestLinearQueue_IsEmpty(t *testing.T) {
 	}
 }
 
+func TestLinearQueue_IsFull(t *testing.T) {
+	dataTable := []struct {
+		name string
+		data LinearQueue
+		want bool
+	}{
+		{"EmptyLinearQueue", getEmptyLinearQueue(), false},
+		{"OneElementLongLinearQueue", getOneElementLongLinearQueue(), false},
+	}
+
+	for _, v := range dataTable {
+		t.Run(v.name, func(t *testing.T) {
+			got := v.data.IsFull()
+			if got != v.want {
+				t.Errorf("It expected %v, but got %v", v.want, got)
+			}
+		})
+	}
+}
+
 func TestLinearQueue_Size(t *testing.T) {
 	dataTable := []struct {
 		name string
@@ -137,8 +157,8 @@ func TestLinearQueue_Top(t *testing.T) {
 
 	for _, v := range dataTable {
 		t.Run(v.name, func(t *testing.T) {
-			v.data.Top()
-			got := v.data.Top()
+			v.data.Peek()
+			got := v.data.Peek()
 			if got != v.want {
 				t.Errorf("It expected %v, but got %v", v.want, got)
 			}

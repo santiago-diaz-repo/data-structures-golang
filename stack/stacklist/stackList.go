@@ -32,6 +32,10 @@ func (ls *StackList) IsEmpty() bool {
 	return ls.elements.Size() == 0
 }
 
-func (ls *StackList) Top() interface{} {
+func (ls *StackList) IsFull() bool {
+	return false
+}
+
+func (ls *StackList) Peek() interface{} {
 	return ls.elements.GetFirstElement()
 }

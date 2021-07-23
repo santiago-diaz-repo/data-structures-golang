@@ -5,5 +5,6 @@ type Stack interface {
 	Pop() interface{}
 	Size() uint16
 	IsEmpty() bool
-	Top() interface{}
+	IsFull() bool
+	Peek() interface{}
 }

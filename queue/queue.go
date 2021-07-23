@@ -4,6 +4,7 @@ type Queue interface {
 	Enqueue(interface{})
 	Dequeue() interface{}
 	IsEmpty() bool
-	Top() interface{}
+	IsFull() bool
+	Peek() interface{}
 	Size() uint16
 }

@@ -28,7 +28,11 @@ func (lq *LinearQueue) IsEmpty() bool {
 	return lq.elements.Size() == 0
 }
 
-func (lq *LinearQueue) Top() interface{} {
+func (lq *LinearQueue) IsFull() bool {
+	return false
+}
+
+func (lq *LinearQueue) Peek() interface{} {
 	return lq.elements.GetFirstElement()
 }
 
