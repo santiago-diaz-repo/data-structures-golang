@@ -16,8 +16,9 @@ func NewStackList(element interface{}) stack.Stack {
 	}
 }
 
-func (ls *StackList) Push(element interface{}) {
+func (ls *StackList) Push(element interface{}) error {
 	ls.elements.AddAtHead(element)
+	return nil
 }
 
 func (ls *StackList) Pop() interface{} {
