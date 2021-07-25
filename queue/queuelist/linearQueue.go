@@ -16,8 +16,9 @@ func NewLinearQueue(element interface{}) queue.Queue {
 	}
 }
 
-func (lq *LinearQueue) Enqueue(element interface{}) {
+func (lq *LinearQueue) Enqueue(element interface{}) error {
 	lq.elements.AddAtEnd(element)
+	return nil
 }
 
 func (lq *LinearQueue) Dequeue() interface{} {

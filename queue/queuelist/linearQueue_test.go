@@ -144,7 +144,7 @@ func TestLinearQueue_Size(t *testing.T) {
 	}
 }
 
-func TestLinearQueue_Top(t *testing.T) {
+func TestLinearQueue_Peek(t *testing.T) {
 	dataTable := []struct {
 		name string
 		data LinearQueue
