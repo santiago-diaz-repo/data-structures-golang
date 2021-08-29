@@ -10,9 +10,15 @@ type LinearQueue struct {
 	elements list.List
 }
 
-func NewLinearQueue(element interface{}) queue.Queue {
+func NewLinearQueueEmp() queue.Queue {
 	return &LinearQueue{
-		elements: singlylinkedlist.NewSinglyLinkedList(element),
+		elements: singlylinkedlist.NewSinglyLinkedListEmp(),
+	}
+}
+
+func NewLinearQueueEle(element interface{}) queue.Queue {
+	return &LinearQueue{
+		elements: singlylinkedlist.NewSinglyLinkedListEle(element),
 	}
 }
 

@@ -7,22 +7,22 @@ import (
 )
 
 func getEmptyLinearQueue() LinearQueue {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
-	singlyLinkedList.RemoveAtHead()
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEmp()
+	//singlyLinkedList.RemoveAtHead()
 	return LinearQueue{
 		elements: singlyLinkedList,
 	}
 }
 
 func getOneElementLongLinearQueue() LinearQueue {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEle(0)
 	return LinearQueue{
 		elements: singlyLinkedList,
 	}
 }
 
 func getManyElementLongLinearQueue() LinearQueue {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEle(0)
 	for i := 1; i < 10; i++ {
 		singlyLinkedList.AddAtHead(i)
 	}
@@ -31,9 +31,18 @@ func getManyElementLongLinearQueue() LinearQueue {
 	}
 }
 
-func TestNewLinearQueue(t *testing.T) {
+func TestNewLinearQueueEmp(t *testing.T) {
 	want := "*queuelist.LinearQueue"
-	subject := NewLinearQueue(6)
+	subject := NewLinearQueueEmp()
+	got := reflect.TypeOf(subject)
+	if got.String() != want {
+		t.Errorf("It expected %v but got %v", want, got)
+	}
+}
+
+func TestNewLinearQueueEle(t *testing.T) {
+	want := "*queuelist.LinearQueue"
+	subject := NewLinearQueueEle(6)
 	got := reflect.TypeOf(subject)
 	if got.String() != want {
 		t.Errorf("It expected %v but got %v", want, got)
