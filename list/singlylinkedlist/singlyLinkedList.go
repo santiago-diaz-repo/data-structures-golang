@@ -16,7 +16,15 @@ type SinglyLinkedList struct {
 	size uint16
 }
 
-func NewSinglyLinkedList(element interface{}) list.List {
+func NewSinglyLinkedListEmp() list.List {
+	return &SinglyLinkedList{
+		head: nil,
+		tail: nil,
+		size: 0,
+	}
+}
+
+func NewSinglyLinkedListEle(element interface{}) list.List {
 	node := &node{
 		element: element,
 		next:    nil,

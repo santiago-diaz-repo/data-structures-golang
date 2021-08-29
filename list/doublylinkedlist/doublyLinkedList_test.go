@@ -61,9 +61,18 @@ func getEvenNumberLongList() DoublyLinkedList {
 	return list
 }
 
-func TestNewDoublyLinkedList(t *testing.T) {
+func TestNewDoublyLinkedListEmp(t *testing.T) {
 	want := "*doublylinkedlist.DoublyLinkedList"
-	subject := NewDoublyLinkedList(5)
+	subject := NewDoublyLinkedListEmp()
+	got := reflect.TypeOf(subject)
+	if got.String() != want {
+		t.Errorf("It expected %v but got %v", want, got)
+	}
+}
+
+func TestNewDoublyLinkedListEle(t *testing.T) {
+	want := "*doublylinkedlist.DoublyLinkedList"
+	subject := NewDoublyLinkedListEle(5)
 	got := reflect.TypeOf(subject)
 	if got.String() != want {
 		t.Errorf("It expected %v but got %v", want, got)

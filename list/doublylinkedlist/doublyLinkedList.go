@@ -17,7 +17,15 @@ type DoublyLinkedList struct {
 	size uint16
 }
 
-func NewDoublyLinkedList(element interface{}) list.List {
+func NewDoublyLinkedListEmp() list.List {
+	return &DoublyLinkedList{
+		head: nil,
+		tail: nil,
+		size: 0,
+	}
+}
+
+func NewDoublyLinkedListEle(element interface{}) list.List {
 	node := &node{
 		element: element,
 		next:    nil,

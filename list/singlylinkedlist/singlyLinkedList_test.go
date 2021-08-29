@@ -58,9 +58,18 @@ func getEvenNumberLongList() SinglyLinkedList {
 	return list
 }
 
-func TestNewSinglyLinkedList(t *testing.T) {
+func TestNewSinglyLinkedListEmp(t *testing.T) {
 	want := "*singlylinkedlist.SinglyLinkedList"
-	subject := NewSinglyLinkedList(5)
+	subject := NewSinglyLinkedListEmp()
+	got := reflect.TypeOf(subject)
+	if got.String() != want {
+		t.Errorf("It expected %v but got %v", want, got)
+	}
+}
+
+func TestNewSinglyLinkedListEle(t *testing.T) {
+	want := "*singlylinkedlist.SinglyLinkedList"
+	subject := NewSinglyLinkedListEle(5)
 	got := reflect.TypeOf(subject)
 	if got.String() != want {
 		t.Errorf("It expected %v but got %v", want, got)
