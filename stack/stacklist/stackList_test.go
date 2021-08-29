@@ -7,7 +7,7 @@ import (
 )
 
 func getEmptyStackList() StackList {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEle(0)
 	singlyLinkedList.RemoveAtHead()
 	return StackList{
 		elements: singlyLinkedList,
@@ -15,14 +15,14 @@ func getEmptyStackList() StackList {
 }
 
 func getOneElementLongStackList() StackList {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEle(0)
 	return StackList{
 		elements: singlyLinkedList,
 	}
 }
 
 func getManyElementLongStackList() StackList {
-	singlyLinkedList := singlylinkedlist.NewSinglyLinkedList(0)
+	singlyLinkedList := singlylinkedlist.NewSinglyLinkedListEle(0)
 	for i := 1; i < 10; i++ {
 		singlyLinkedList.AddAtHead(i)
 	}
@@ -31,9 +31,18 @@ func getManyElementLongStackList() StackList {
 	}
 }
 
-func TestNewStackList(t *testing.T) {
+func TestNewStackListEmp(t *testing.T) {
 	want := "*stacklist.StackList"
-	subject := NewStackList(5)
+	subject := NewStackListEmp()
+	got := reflect.TypeOf(subject)
+	if got.String() != want {
+		t.Errorf("It expected %v but got %v", want, got)
+	}
+}
+
+func TestNewStackListEle(t *testing.T) {
+	want := "*stacklist.StackList"
+	subject := NewStackListEle(5)
 	got := reflect.TypeOf(subject)
 	if got.String() != want {
 		t.Errorf("It expected %v but got %v", want, got)

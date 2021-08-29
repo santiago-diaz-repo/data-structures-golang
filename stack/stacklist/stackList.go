@@ -10,9 +10,15 @@ type StackList struct {
 	elements list.List
 }
 
-func NewStackList(element interface{}) stack.Stack {
+func NewStackListEmp() stack.Stack {
 	return &StackList{
-		elements: singlylinkedlist.NewSinglyLinkedList(element),
+		elements: singlylinkedlist.NewSinglyLinkedListEmp(),
+	}
+}
+
+func NewStackListEle(element interface{}) stack.Stack {
+	return &StackList{
+		elements: singlylinkedlist.NewSinglyLinkedListEle(element),
 	}
 }
 
