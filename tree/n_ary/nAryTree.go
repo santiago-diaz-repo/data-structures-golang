@@ -6,7 +6,7 @@ import (
 )
 
 type treeNode struct {
-	value interface{}
+	value    interface{}
 	children list.List
 }
 
@@ -20,9 +20,9 @@ func NewNAryTreeEmp() *NAryTree {
 	}
 }
 
-func NewNAryTreeValue(value interface{}) *NAryTree{
+func NewNAryTreeValue(value interface{}) *NAryTree {
 	root := treeNode{
-		value: value,
+		value:    value,
 		children: doublylinkedlist.NewDoublyLinkedListEmp(),
 	}
 
@@ -31,9 +31,9 @@ func NewNAryTreeValue(value interface{}) *NAryTree{
 	}
 }
 
-func NewAryTreeValueChildren(value interface{}, children list.List) *NAryTree{
+func NewAryTreeValueChildren(value interface{}, children list.List) *NAryTree {
 	root := treeNode{
-		value: value,
+		value:    value,
 		children: children,
 	}
 

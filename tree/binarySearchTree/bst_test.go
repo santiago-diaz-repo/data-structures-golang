@@ -170,7 +170,7 @@ func TestBST_PreOrderTraversal(t *testing.T) {
 	subject.AddRecursive(3)
 	subject.AddRecursive(18)
 
-	want := []int{9,4,3,5,15,11,18}
+	want := []int{9, 4, 3, 5, 15, 11, 18}
 	got := subject.PreOrderTraversal()
 
 	for i := 0; i < len(*got); i++ {
@@ -190,7 +190,7 @@ func TestBST_InOrderTraversal(t *testing.T) {
 	subject.AddRecursive(3)
 	subject.AddRecursive(18)
 
-	want := []int{3,4,5,9,11,15,18}
+	want := []int{3, 4, 5, 9, 11, 15, 18}
 	got := subject.InOrderTraversal()
 
 	for i := 0; i < len(*got); i++ {
@@ -210,7 +210,7 @@ func TestBST_PostOrderTraversal(t *testing.T) {
 	subject.AddRecursive(3)
 	subject.AddRecursive(18)
 
-	want := []int{3,5,4,11,18,15,9}
+	want := []int{3, 5, 4, 11, 18, 15, 9}
 	got := subject.PostOrderTraversal()
 
 	for i := 0; i < len(*got); i++ {
